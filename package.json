@@ -1,0 +1,24 @@
+{
+  "name": "lightWithBroswer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tclukies/lightWithBrowser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tclukies/lightWithBrowser/issues"
+  },
+  "homepage": "https://github.com/tclukies/lightWithBrowser#readme",
+  "dependencies": {
+    "onoff": "^3.2.1",
+    "socket.io": "^2.1.1"
+  }
+}
