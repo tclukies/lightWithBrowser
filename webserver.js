@@ -2,6 +2,7 @@ var http = require('http').createServer(handler); //require http server, and cre
 var fs = require('fs'); //require filesystem module
 var io = require('socket.io')(http) //require socket.io module and pass the http object (server)
 const Gpio = require('onoff').Gpio;
+const LED = new Gpio(4, 'out'); // gpio 4 as out
 
 http.listen(8080); //listen to port 8080
 
@@ -18,7 +19,6 @@ function handler (req, res) { //create server
 }
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
-  const LED = new Gpio(4, 'out'); // gpio 4 as out
   var lightvalue = 0; //static variable for current status
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
@@ -26,7 +26,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     LED.writeSync(1); // make it 1 (on)
     console.log("on")
     }
-    else {console.log("working!")}
+    else {
+      LED.writeSync(0); // make it 0 (off)
+      console.log("working!")}
   });
 });
 
