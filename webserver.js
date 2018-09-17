@@ -23,5 +23,6 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     if (lightvalue) {
       console.log(lightvalue); //turn LED on or off, for now we will just show it in console.log
     }
+    else {console.log("working!")}
   });
 });
