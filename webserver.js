@@ -23,27 +23,29 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
     if (lightvalue) {
-      const timer = setInterval(()=>{
-      if (LED.readSync() === 0) { // if current pin state is 0 (off)
-      LED.writeSync(1); // make it 1 (on)
-      } else {
-      LED.writeSync(0); // make it 0 (off)
-      }
-      }, 1000);
-      
-      
-      function switchOff(){
-      clearInterval(timer);
-      LED.writeSync(0); // making the gpio 4 off. Will turn LED off
-      LED.unexport(); // Unexport GPIO to free resources
-      }
-      
-      setTimeout(switchOff, 10000);
+    LED.writeSync(1); // make it 1 (on)
+    console.log("on")
     }
-    else {console.log("stop")}
+    else {console.log("working!")}
   });
 });
 
 
  
  
+// const timer = setInterval(()=>{
+//   if (LED.readSync() === 0) { // if current pin state is 0 (off)
+//     LED.writeSync(1); // make it 1 (on)
+//   } else {
+//     LED.writeSync(0); // make it 0 (off)
+//   }
+// }, 1000);
+  
+ 
+// function switchOff(){
+//   clearInterval(timer);
+//   LED.writeSync(0); // making the gpio 4 off. Will turn LED off
+//   LED.unexport(); // Unexport GPIO to free resources
+// }
+ 
+// setTimeout(switchOff, 10000);
