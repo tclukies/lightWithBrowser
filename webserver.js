@@ -4,7 +4,7 @@ var io = require('socket.io')(http) //require socket.io module and pass the http
 const Gpio = require('onoff').Gpio;
 const LED = new Gpio(4, 'out'); // gpio 4 as out
 
-http.listen(8080); //listen to port 8080
+http.listen(8080 || process.env.PORT); //listen to port 8080
 
 function handler (req, res) { //create server
   fs.readFile(__dirname + '/public/index.html', function(err, data) { //read file index.html in public folder
