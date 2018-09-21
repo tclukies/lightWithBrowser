@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tclukies/lightWithBrowser#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "onoff": "^3.2.1",
     "socket.io": "^2.1.1"
   }
