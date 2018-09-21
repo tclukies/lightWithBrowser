@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const INDEX = path.join('https://pocket-lockit.firebaseapp.com/lock.html');
+const INDEX = path.join('http://localhost:3000/lock.html');
 
 const server = express()
   .use((req, res) => res.sendFile(INDEX) )
